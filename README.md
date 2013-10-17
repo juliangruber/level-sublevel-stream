@@ -4,6 +4,8 @@
 Find all the sublevels of a given database, not requiring them to be in memory
 already.
 
+[![build status](https://secure.travis-ci.org/juliangruber/level-sublevel-stream.png)](http://travis-ci.org/juliangruber/level-sublevel-stream)
+
 ## Motivation
 
 Most modules currently inspect `db.sublevels` to find out all the sublevels of
