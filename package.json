@@ -1,6 +1,6 @@
 {
   "name": "level-sublevel-stream",
-  "description": "Find all the sublevels of a sublevel",
+  "description": "Find all the sublevels of a database",
   "version": "0.0.0",
   "repository": {
     "type": "git",
