@@ -1,0 +1,35 @@
+{
+  "name": "level-sublevel-stream",
+  "description": "Find all the sublevels of a sublevel",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/level-sublevel-stream.git"
+  },
+  "homepage": "https://github.com/juliangruber/level-sublevel-stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "dependencies": {
+    "through": "~2.3.4"
+  },
+  "devDependencies": {
+    "tape": "~2.0.0",
+    "level-sublevel": "git://github.com/juliangruber/level-sublevel#safe-ranges",
+    "level": "~0.17.0-1",
+    "rimraf": "~2.2.2"
+  },
+  "keywords": [
+    "level",
+    "level-sublevel",
+    "leveldb",
+    "sublevel"
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "license": "MIT"
+}
