@@ -5,8 +5,7 @@ module.exports = function(db, opts) {
   if (!opts) opts = {};
 
   (function next(gt, lt) {
-    gt = gt || '\xff';
-    lt = lt || '\xff\xff';
+    var found = false;
 
     db.createKeyStream({
       gt: gt,
@@ -18,16 +17,20 @@ module.exports = function(db, opts) {
       tr.emit('error', err);
     })
     .on('data', function(key) {
+      found = true;
       var sub = key.split('\xff')[1];
       tr.queue(sub);
 
       if (opts.reverse) {
-        next(null, '\xff' + sub);
+        next(gt, '\xff' + sub);
       } else {
-        next('\xff' + sub + '\xff\xff', null);
+        next('\xff' + sub + '\xff\xff', lt);
       }
+    })
+    .on('end', function() {
+      if (!found) tr.queue(null);
     });
-  })(opts.gt, opts.lt);
+  })(opts.gt || '\xff', opts.lt || '\xff\xff');
 
   return tr;
 };
