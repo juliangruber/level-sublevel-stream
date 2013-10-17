@@ -33,6 +33,10 @@ var tests = [
   /*[{ end: 'a' }, ['a']],*/
   /*[{ end: 'b' }, ['a', 'b']],*/
 
+  /*[{ reverse: true, start: 'c' }, []],*/
+  /*[{ reverse: true, start: 'b' }, ['b']],*/
+  [{ reverse: true, start: 'a' }, ['b', 'a']],
+
   /*[{ reverse: true, end: '\x00' }, []],*/
   /*[{ reverse: true, end: 'a' }, ['a']],*/
   [{ reverse: true, end: 'b' }, ['b', 'a']],
