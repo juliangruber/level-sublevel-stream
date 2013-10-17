@@ -1,4 +1,3 @@
-
 # level-sublevel-stream
 
 Find all the sublevels of a given database, not requiring them to be in memory
@@ -56,10 +55,10 @@ instance of levelup or a sublevel itself.
 Possible options are:
 
 * `reverse`: If true, emit sublevels in reverse lexicographic order
-* `gt`: Only emit sublevels whose name sorts `&gt;` that value
-* `gte`: Only emit sublevels whose name sorts `&gte;` that value
-* `lt`: Only emit sublevels whose name sorts `&lt;` that value
-* `lte`: Only emit sublevels whose name sorts `&lte;` that value
+* `gt`: Only emit sublevels whose name sort `>` that value
+* `gte`: Only emit sublevels whose name sort `>=` that value
+* `lt`: Only emit sublevels whose name sort `<` that value
+* `lte`: Only emit sublevels whose name sort `<=` that value
 
 ## Installation
 
