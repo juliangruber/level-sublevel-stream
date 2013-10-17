@@ -25,17 +25,13 @@ function getDb(fn) {
 }
 
 var tests = [
-  [{ start: 'c' }, []],
-  [{ start: 'b' }, ['b']],
-  [{ start: 'a' }, ['a', 'b']],
+  [{ lte: '\x00' }, []],
+  [{ lte: 'a' }, ['a']],
+  [{ lte: 'b' }, ['a', 'b']],
 
-  [{ end: '\x00' }, []],
-  /*[{ end: 'a' }, ['a']],*/
-  /*[{ end: 'b' }, ['a', 'b']],*/
-
-  /*[{ reverse: true, end: '\x00' }, []],*/
-  /*[{ reverse: true, end: 'a' }, ['a']],*/
-  [{ reverse: true, end: 'b' }, ['b', 'a']],
+  [{ reverse: true, lte: '\x00' }, []],
+  [{ reverse: true, lte: 'a' }, ['a']],
+  [{ reverse: true, lte: 'b' }, ['b', 'a']]
 ];
 
 tests.forEach(function(arr) {
