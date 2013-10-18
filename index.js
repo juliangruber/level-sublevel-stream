@@ -29,10 +29,10 @@ module.exports = function(db, opts) {
 
       if (opts.reverse) {
         opts.lt = sep + sub;
-        opts.lte = null;
+        delete opts.lte;
       } else {
         opts.gt = sep + sub + sep + sep;
-        opts.gte = null;
+        delete opts.gte;
       }
 
       next();
