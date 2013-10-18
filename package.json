@@ -1,7 +1,7 @@
 {
   "name": "level-sublevel-stream",
   "description": "Find all the sublevels of a database",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/juliangruber/level-sublevel-stream.git"

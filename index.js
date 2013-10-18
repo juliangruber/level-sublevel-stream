@@ -14,6 +14,7 @@ module.exports = function(db, opts) {
   else opts.lt = sep + sep;
 
   opts.limit = 1;
+  var last;
 
   (function next() {
     var found = false;
@@ -25,6 +26,16 @@ module.exports = function(db, opts) {
     .on('data', function(key) {
       found = true;
       var sub = key.split('\xff')[1];
+
+      if (last == sub || opts.gt && opts.gt == sep + sub + sep + sep) {
+        var base = sub.substring(0, sub.length - 1);
+        var incr = String.fromCharCode(sub.charCodeAt(sub.length - 1) + 1);
+        opts.gte = sep + base + incr;
+        delete opts.gt;
+        return next();
+      }
+
+      last = sub;
       tr.queue(sub);
 
       if (opts.reverse) {
