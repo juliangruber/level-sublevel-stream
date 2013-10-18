@@ -1,28 +1,6 @@
-var level = require('level');
-var sub = require('level-sublevel');
 var subStream = require('..');
-var rimraf = require('rimraf').sync;
 var test = require('tape');
-var tmpdir = require('os').tmpdir;
-var join = require('path').join;
-
-function getDb(fn) {
-  var p = join(tmpdir(), Math.random().toString(16));
-  rimraf(p);
-  var db = sub(level(p));
-  db.batch([
-    { type: 'put', prefix: db.sublevel('a'), key: 'aa', value: 'aa' },
-    { type: 'put', prefix: db.sublevel('a'), key: 'ab', value: 'ab' },
-    { type: 'put', prefix: db.sublevel('b'), key: 'ba', value: 'ba' },  
-    { type: 'put', prefix: db.sublevel('b'), key: 'bb', value: 'bb' }  
-  ], function(err) {
-    if (err) return fn(err);
-    db.close(function(err) {
-      if (err) return fn(err);
-      fn(null, sub(level(p)));
-    })
-  });
-}
+var getDb = require('./get-db');
 
 var tests = [
   [{ lte: '\x00' }, []],
