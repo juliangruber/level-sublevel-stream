@@ -15,10 +15,10 @@
     "through": "~2.3.4"
   },
   "devDependencies": {
-    "tape": "~2.0.0",
+    "tape": "~4.6.2",
     "level-sublevel": "git://github.com/juliangruber/level-sublevel#new-ranges",
-    "level": "~0.17.0-1",
-    "rimraf": "~2.2.2"
+    "level": "~1.5.0",
+    "rimraf": "~2.5.4"
   },
   "keywords": [
     "level",
