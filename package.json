@@ -17,7 +17,7 @@
   "devDependencies": {
     "tape": "~4.6.2",
     "level-sublevel": "git://github.com/juliangruber/level-sublevel#new-ranges",
-    "level": "~1.5.0",
+    "level": "~1.6.0",
     "rimraf": "~2.5.4"
   },
   "keywords": [
