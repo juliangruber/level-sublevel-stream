@@ -18,7 +18,7 @@
     "tape": "~4.6.2",
     "level-sublevel": "git://github.com/juliangruber/level-sublevel#new-ranges",
     "level": "~1.5.0",
-    "rimraf": "~2.5.4"
+    "rimraf": "~2.6.0"
   },
   "keywords": [
     "level",
